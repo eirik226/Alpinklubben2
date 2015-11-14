@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block Hbody %}
+
+<p><center>Hei og velkommen - om du ikke er registrert ber vi deg gjøre dette for å få full tilgang til siden,
+dete kan gjøres ved å trykke </br><a href="registrer" style="font-size: 17px;">her</a></br> 
+eller på registreringsknappen under.</center></p> 
+
+<div class="login-card">
+	<h2><center>Log-in</center></h2><br>
+		<form action="" method="post">
+			<p><input type="text" name="brukernavn" value="{{request.form.brukernavn }}">
+			<p><input type="password" name="passord" value="{{request.form.passord }}">
+			<p><input type="submit" value="Login">
+			<p><input type="submit" value="Registrer deg">
+		</form>
+			{% if error %}
+				<p class="error"><strong>Error:</strong> {{ error }}</p>
+			{% endif %}
+</div>
+ 
+
+{% endblock %}

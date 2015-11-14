@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block Hbody %}
+
+<p><center>Hei og takk for at du valgte  registrere deg. Bruk skjemaet under:</center></p> 
+
+	<div class = "container">
+			{% from "_formhjelper.html" import render_field %}
+		<form method=post action="/registrer">
+			<dl>
+				{{render_field(form.username)}}
+				{{render_field(form.email)}}
+				{{render_field(form.password)}}
+				{{render_field(form.confirm)}}
+			</dl>
+			<p><input type=submit value=Registrer></p>
+		</form>
+		
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+	</div>
+{% endblock %}
